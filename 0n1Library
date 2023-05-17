@@ -1,0 +1,402 @@
+-- LibraryTable
+local Library = {}
+
+-- Window
+function Library:CreateWindow(LibName)
+	
+	local ScreenGui = Instance.new("ScreenGui")
+	local Main_1 = Instance.new("Frame")
+	local UICorner_1 = Instance.new("UICorner")
+	local Title_1 = Instance.new("TextLabel")
+	local UIPadding_1 = Instance.new("UIPadding")
+	local Split_1 = Instance.new("Frame")
+	local Split2_1 = Instance.new("Frame")
+	local Tabs_1 = Instance.new("ScrollingFrame")
+	local UIPadding_3 = Instance.new("UIPadding")
+	local UIListLayout_1 = Instance.new("UIListLayout")
+	local Close_1 = Instance.new("TextButton")
+	local Items_1 = Instance.new("Frame")
+
+	
+	
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	Main_1.Name = "Main"
+	Main_1.Parent = ScreenGui
+	Main_1.BackgroundColor3 = Color3.fromRGB(52,52,52)
+	Main_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	Main_1.Position = UDim2.new(0.32007125, 0,0.319057822, 0)
+	Main_1.Size = UDim2.new(0, 466,0, 315)
+
+	UICorner_1.Parent = Main_1
+
+	Title_1.Name = "Title"
+	Title_1.Parent = Main_1
+	Title_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	Title_1.BackgroundTransparency = 1
+	Title_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	Title_1.Size = UDim2.new(0, 171,0, 40)
+	Title_1.Font = Enum.Font.Gotham
+	Title_1.Text = LibName
+	Title_1.TextColor3 = Color3.fromRGB(255,255,255)
+	Title_1.TextSize = 19
+	Title_1.TextXAlignment = Enum.TextXAlignment.Left
+
+	UIPadding_1.Parent = Title_1
+	UIPadding_1.PaddingLeft = UDim.new(0,12)
+
+	Split_1.Name = "Split"
+	Split_1.Parent = Main_1
+	Split_1.BackgroundColor3 = Color3.fromRGB(36,36,36)
+	Split_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	Split_1.BorderSizePixel = 0
+	Split_1.Position = UDim2.new(0.366952777, 0,0, 0)
+	Split_1.Size = UDim2.new(0, 3,0, 315)
+
+	Split2_1.Name = "Split2"
+	Split2_1.Parent = Main_1
+	Split2_1.BackgroundColor3 = Color3.fromRGB(36,36,36)
+	Split2_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	Split2_1.BorderSizePixel = 0
+	Split2_1.Position = UDim2.new(0, 0,0.117460318, 0)
+	Split2_1.Size = UDim2.new(0, 171,0, 3)
+
+	Tabs_1.Name = "Tabs"
+	Tabs_1.Parent = Main_1
+	Tabs_1.BackgroundColor3 = Color3.fromRGB(36,36,36)
+	Tabs_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	Tabs_1.BorderSizePixel = 0
+	Tabs_1.Position = UDim2.new(0.0171673819, 0,0.146031752, 0)
+	Tabs_1.Size = UDim2.new(0, 156,0, 229)
+	Tabs_1.ClipsDescendants = true
+	Tabs_1.AutomaticCanvasSize = Enum.AutomaticSize.None
+	Tabs_1.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
+	Tabs_1.CanvasPosition = Vector2.new(0, 0)
+	Tabs_1.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+	Tabs_1.HorizontalScrollBarInset = Enum.ScrollBarInset.None
+	Tabs_1.MidImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+	Tabs_1.ScrollBarImageTransparency = 0
+	Tabs_1.ScrollBarThickness = 0
+	Tabs_1.ScrollingDirection = Enum.ScrollingDirection.XY
+	Tabs_1.TopImage = "rbxasset://textures/ui/Scroll/scroll-top.png"
+	Tabs_1.VerticalScrollBarInset = Enum.ScrollBarInset.None
+	Tabs_1.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Right
+	
+	UIPadding_3.Parent = Tabs_1
+	UIPadding_3.PaddingLeft = UDim.new(0,6)
+	UIPadding_3.PaddingTop = UDim.new(0,6)
+
+	UIListLayout_1.Parent = Tabs_1
+	UIListLayout_1.Padding = UDim.new(0,6)
+	UIListLayout_1.SortOrder = Enum.SortOrder.LayoutOrder
+
+	Close_1.Name = "Close"
+	Close_1.Parent = Main_1
+	Close_1.Active = true
+	Close_1.BackgroundColor3 = Color3.fromRGB(36,36,36)
+	Close_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	Close_1.BorderSizePixel = 0
+	Close_1.Position = UDim2.new(0.0171673819, 0,0.892063498, 0)
+	Close_1.Size = UDim2.new(0, 156,0, 25)
+	Close_1.Font = Enum.Font.Gotham
+	Close_1.Text = "Close"
+	Close_1.TextColor3 = Color3.fromRGB(255,255,255)
+	Close_1.TextSize = 14
+
+	Items_1.Name = "Items"
+	Items_1.Parent = Main_1
+	Items_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+	Items_1.BackgroundTransparency = 1
+	Items_1.BorderColor3 = Color3.fromRGB(27,42,53)
+	Items_1.BorderSizePixel = 0
+	Items_1.Position = UDim2.new(0.388412029, 0,0.0380952395, 0)
+	Items_1.Size = UDim2.new(0, 276,0, 296)
+	
+	-- TabsTable
+	local Tabs = {}
+	
+	-- Tab
+	function Tabs:CreateTab(TabName)
+		
+		local Tab1_1 = Instance.new("TextButton")
+		local UIPadding_2 = Instance.new("UIPadding")
+		local Tab1_2 = Instance.new("ScrollingFrame")
+		local UIListLayout_2 = Instance.new("UIListLayout")
+		local UIPadding_4 = Instance.new("UIPadding")
+		
+		Tab1_1.Name = "Tab1"
+		Tab1_1.Parent = Tabs_1
+		Tab1_1.Active = true
+		Tab1_1.BackgroundColor3 = Color3.fromRGB(52,52,52)
+		Tab1_1.BorderColor3 = Color3.fromRGB(27,42,53)
+		Tab1_1.BorderSizePixel = 0
+		Tab1_1.Position = UDim2.new(0.0384615399, 0,0.0262008738, 0)
+		Tab1_1.Size = UDim2.new(0, 144,0, 35)
+		Tab1_1.Font = Enum.Font.Gotham
+		Tab1_1.Text = TabName
+		Tab1_1.TextColor3 = Color3.fromRGB(255,255,255)
+		Tab1_1.TextSize = 16
+		Tab1_1.TextXAlignment = Enum.TextXAlignment.Left
+
+		UIPadding_2.Parent = Tab1_1
+		UIPadding_2.PaddingLeft = UDim.new(0,7)
+
+		Tab1_2.Name = "Tab1"
+		Tab1_2.Parent = Items_1
+		Tab1_2.Active = true
+		Tab1_2.BackgroundColor3 = Color3.fromRGB(36,36,36)
+		Tab1_2.BorderColor3 = Color3.fromRGB(27,42,53)
+		Tab1_2.BorderSizePixel = 0
+		Tab1_2.Position = UDim2.new(0.000730872154, 0,0.00134062953, 0)
+		Tab1_2.Size = UDim2.new(0, 276,0, 296)
+		Tab1_2.ClipsDescendants = true
+		Tab1_2.AutomaticCanvasSize = Enum.AutomaticSize.None
+		Tab1_2.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
+		Tab1_2.CanvasPosition = Vector2.new(0, 0)
+		Tab1_2.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+		Tab1_2.HorizontalScrollBarInset = Enum.ScrollBarInset.None
+		Tab1_2.MidImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+		Tab1_2.ScrollBarImageColor3 = Color3.fromRGB(0,0,0)
+		Tab1_2.ScrollBarImageTransparency = 0
+		Tab1_2.ScrollBarThickness = 0
+		Tab1_2.ScrollingDirection = Enum.ScrollingDirection.XY
+		Tab1_2.TopImage = "rbxasset://textures/ui/Scroll/scroll-top.png"
+		Tab1_2.VerticalScrollBarInset = Enum.ScrollBarInset.None
+		Tab1_2.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Right
+
+		UIListLayout_2.Parent = Tab1_2
+		UIListLayout_2.Padding = UDim.new(0,8)
+		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+
+		UIPadding_4.Parent = Tab1_2
+		UIPadding_4.PaddingLeft = UDim.new(0,8)
+		UIPadding_4.PaddingTop = UDim.new(0,8)
+		
+		Tab1_1.MouseButton1Click:Connect(function()
+			for i,v in next, Items_1:GetChildren() do -- We get all the pages that we added
+				v.Visible = false   -- then we make them invisible 
+			end 
+			Tab1_2.Visible = true  -- We make current page visible but not others
+		end)
+		
+		
+		-- ElementsTable
+		local Elements = {}
+		
+		-- Label
+		function Elements:CreateLabel(LabName)
+			
+			local Label_1 = Instance.new("Frame")
+			local TextLabel_4 = Instance.new("TextLabel")
+			local UIPadding_9 = Instance.new("UIPadding")
+			local UIPadding_10 = Instance.new("UIPadding")
+			
+			Label_1.Name = "Label"
+			Label_1.Parent = Tab1_2
+			Label_1.Active = true
+			Label_1.BackgroundColor3 = Color3.fromRGB(73,73,73)
+			Label_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			Label_1.BorderSizePixel = 0
+			Label_1.Position = UDim2.new(0.0289855078, 0,0.493243247, 0)
+			Label_1.Size = UDim2.new(0, 260,0, 26)
+
+			TextLabel_4.Parent = Label_1
+			TextLabel_4.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			TextLabel_4.BackgroundTransparency = 1
+			TextLabel_4.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextLabel_4.Position = UDim2.new(-0.000976797193, 0,0.0526310839, 0)
+			TextLabel_4.Size = UDim2.new(0, 260,0, 24)
+			TextLabel_4.Font = Enum.Font.Gotham
+			TextLabel_4.Text = LabName
+			TextLabel_4.TextColor3 = Color3.fromRGB(255,255,255)
+			TextLabel_4.TextSize = 14
+			TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding_9.Parent = TextLabel_4
+			UIPadding_9.PaddingLeft = UDim.new(0,8)
+
+			UIPadding_10.Parent = TextLabel_4
+			UIPadding_10.PaddingLeft = UDim.new(0,8)
+		end
+		
+		-- Button
+		function Elements:CreateButton(ButName,Callback)
+			
+			Callback = Callback or function() end   
+			local Button_1 = Instance.new("Frame")
+			local TextButton_1 = Instance.new("TextButton")
+			local TextLabel_2 = Instance.new("TextLabel")
+			local UIPadding_6 = Instance.new("UIPadding")
+			local UIPadding_7 = Instance.new("UIPadding")
+			
+			Button_1.Name = "Button"
+			Button_1.Parent = Tab1_2
+			Button_1.Active = true
+			Button_1.BackgroundColor3 = Color3.fromRGB(52,52,52)
+			Button_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			Button_1.BorderSizePixel = 0
+			Button_1.Position = UDim2.new(0.0289855078, 0,0.0270270277, 0)
+			Button_1.Size = UDim2.new(0, 260,0, 38)
+
+			TextButton_1.Parent = Button_1
+			TextButton_1.Active = true
+			TextButton_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			TextButton_1.BackgroundTransparency = 1
+			TextButton_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextButton_1.BorderSizePixel = 0
+			TextButton_1.Position = UDim2.new(0.85585773, 0,0.131578952, 0)
+			TextButton_1.Size = UDim2.new(0, 27,0, 23)
+			TextButton_1.Font = Enum.Font.Gotham
+			TextButton_1.Text = "·"
+			TextButton_1.TextColor3 = Color3.fromRGB(255,255,255)
+			TextButton_1.TextSize = 88
+
+			TextLabel_2.Parent = Button_1
+			TextLabel_2.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			TextLabel_2.BackgroundTransparency = 1
+			TextLabel_2.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextLabel_2.Position = UDim2.new(-0.000976802781, 0,0.0526315793, 0)
+			TextLabel_2.Size = UDim2.new(0, 153,0, 36)
+			TextLabel_2.Font = Enum.Font.Gotham
+			TextLabel_2.Text = ButName
+			TextLabel_2.TextColor3 = Color3.fromRGB(255,255,255)
+			TextLabel_2.TextSize = 14
+			TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding_6.Parent = TextLabel_2
+			UIPadding_6.PaddingLeft = UDim.new(0,8)
+
+			UIPadding_7.Parent = TextLabel_2
+			UIPadding_7.PaddingLeft = UDim.new(0,8)
+			
+			TextButton_1.MouseButton1Click:Connect(function()
+				TextButton_1.TextSize = 70	
+				wait(0.2)
+				TextButton_1.TextSize = 88
+				Callback()
+			end)
+		end
+		
+		-- Toggle
+		function Elements:CreateToggle(TogName,Callback)
+			local toggled = false
+			Callback = Callback or function() end
+			local ToggleInactive_1 = Instance.new("Frame")
+			local Toggler_1 = Instance.new("TextButton")
+			local TextLabel_1 = Instance.new("TextLabel")
+			local UIPadding_5 = Instance.new("UIPadding")
+			
+			ToggleInactive_1.Name = "ToggleInactive"
+			ToggleInactive_1.Parent = Tab1_2
+			ToggleInactive_1.Active = true
+			ToggleInactive_1.BackgroundColor3 = Color3.fromRGB(52,52,52)
+			ToggleInactive_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			ToggleInactive_1.BorderSizePixel = 0
+			ToggleInactive_1.Position = UDim2.new(0.0289855078, 0,0.0270270277, 0)
+			ToggleInactive_1.Size = UDim2.new(0, 260,0, 38)
+
+			Toggler_1.Name = "Toggler"
+			Toggler_1.Parent = ToggleInactive_1
+			Toggler_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			Toggler_1.BackgroundTransparency = 1
+			Toggler_1.BorderColor3 = Color3.fromRGB(255,255,255)
+			Toggler_1.Position = UDim2.new(0.854700863, 0,0.105263159, 0)
+			Toggler_1.Size = UDim2.new(0, 30,0, 30)
+			Toggler_1.Font = Enum.Font.GothamBold
+			Toggler_1.Text = "X"
+			Toggler_1.TextColor3 = Color3.fromRGB(255,255,255)
+			Toggler_1.TextSize = 15
+			Toggler_1.TextStrokeColor3 = Color3.fromRGB(255,255,255)
+
+			TextLabel_1.Parent = ToggleInactive_1
+			TextLabel_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			TextLabel_1.BackgroundTransparency = 1
+			TextLabel_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextLabel_1.Position = UDim2.new(-0.000976802781, 0,0.0526315793, 0)
+			TextLabel_1.Size = UDim2.new(0, 153,0, 36)
+			TextLabel_1.Font = Enum.Font.Gotham
+			TextLabel_1.Text = TogName
+			TextLabel_1.TextColor3 = Color3.fromRGB(255,255,255)
+			TextLabel_1.TextSize = 14
+			TextLabel_1.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding_5.Parent = TextLabel_1
+			UIPadding_5.PaddingLeft = UDim.new(0,8)
+			
+			local tog = false
+			
+			Toggler_1.MouseButton1Click:Connect(function()
+				tog = not tog
+				Callback(tog) -- Callbacks whenever we toggle
+				if tog then 
+					Toggler_1.Text = "✓	"
+				else
+					Toggler_1.Text = "X"
+				end
+			end)
+			
+		end
+		
+		-- TextBox
+		function Elements:CreateBox(BoxName,Callback)
+			
+			Callback = Callback or function() end
+			local TextBox_1 = Instance.new("Frame")
+			local TextLabel_5 = Instance.new("TextLabel")
+			local UIPadding_11 = Instance.new("UIPadding")
+			local UIPadding_12 = Instance.new("UIPadding")
+			local TextBox_2 = Instance.new("TextBox")
+			
+			TextBox_1.Name = "TextBox"
+			TextBox_1.Parent = Tab1_2
+			TextBox_1.Active = true
+			TextBox_1.BackgroundColor3 = Color3.fromRGB(52,52,52)
+			TextBox_1.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextBox_1.BorderSizePixel = 0
+			TextBox_1.Position = UDim2.new(0.0289855078, 0,0.0270270277, 0)
+			TextBox_1.Size = UDim2.new(0, 260,0, 38)
+
+			TextLabel_5.Parent = TextBox_1
+			TextLabel_5.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			TextLabel_5.BackgroundTransparency = 1
+			TextLabel_5.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextLabel_5.Position = UDim2.new(-0.000976802781, 0,0.0526315793, 0)
+			TextLabel_5.Size = UDim2.new(0, 153,0, 36)
+			TextLabel_5.Font = Enum.Font.Gotham
+			TextLabel_5.Text = BoxName
+			TextLabel_5.TextColor3 = Color3.fromRGB(255,255,255)
+			TextLabel_5.TextSize = 14
+			TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding_11.Parent = TextLabel_5
+			UIPadding_11.PaddingLeft = UDim.new(0,8)
+
+			UIPadding_12.Parent = TextLabel_5
+			UIPadding_12.PaddingLeft = UDim.new(0,8)
+
+			TextBox_2.Parent = TextBox_1
+			TextBox_2.Active = true
+			TextBox_2.BackgroundColor3 = Color3.fromRGB(93,93,93)
+			TextBox_2.BorderColor3 = Color3.fromRGB(27,42,53)
+			TextBox_2.BorderSizePixel = 0
+			TextBox_2.Position = UDim2.new(0.679077148, 0,0.131999776, 0)
+			TextBox_2.Size = UDim2.new(0, 75,0, 28)
+			TextBox_2.Font = Enum.Font.SourceSans
+			TextBox_2.PlaceholderColor3 = Color3.fromRGB(178,178,178)
+			TextBox_2.PlaceholderText = ""
+			TextBox_2.Text = ""
+			TextBox_2.TextColor3 = Color3.fromRGB(255,255,255)
+			TextBox_2.TextSize = 14
+			
+			TextBox_2.FocusLost:Connect(function(enterpressed)
+				if enterpressed then
+					Callback(TextBox_2.Text)
+				end
+			end)
+			
+		end
+		return Elements
+	end
+	return Tabs
+end
+return Library
