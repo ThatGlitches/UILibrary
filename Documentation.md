@@ -28,3 +28,10 @@ Tab:CreateToggle("Toggle Text",function(state)
 
 end)
 ```
+
+#### Creating Text Boxes
+```lua
+Tab:CreateBox("Text Box Text",function(Value)
+
+end)
+```
