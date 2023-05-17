@@ -27,7 +27,9 @@ function Library:CreateWindow(LibName)
 	Main_1.BorderColor3 = Color3.fromRGB(27,42,53)
 	Main_1.Position = UDim2.new(0.32007125, 0,0.319057822, 0)
 	Main_1.Size = UDim2.new(0, 466,0, 315)
-
+	Main_1.Active = true
+	Main_1.Draggable = true
+	
 	UICorner_1.Parent = Main_1
 
 	Title_1.Name = "Title"
