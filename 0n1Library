@@ -155,7 +155,7 @@ function Library:CreateWindow(LibName)
 		Tab1_2.Position = UDim2.new(0.000730872154, 0,0.00134062953, 0)
 		Tab1_2.Size = UDim2.new(0, 276,0, 296)
 		Tab1_2.ClipsDescendants = true
-		Tab1_2.AutomaticCanvasSize = Enum.AutomaticSize.None
+		Tab1_2.AutomaticCanvasSize = Enum.AutomaticSize.Y
 		Tab1_2.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
 		Tab1_2.CanvasPosition = Vector2.new(0, 0)
 		Tab1_2.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
@@ -176,6 +176,7 @@ function Library:CreateWindow(LibName)
 		UIPadding_4.Parent = Tab1_2
 		UIPadding_4.PaddingLeft = UDim.new(0,8)
 		UIPadding_4.PaddingTop = UDim.new(0,8)
+		UIPadding_4.PaddingBottom = UDim.new(0,8)
 		
 		Tab1_1.MouseButton1Click:Connect(function()
 			for i,v in next, Items_1:GetChildren() do -- We get all the pages that we added
