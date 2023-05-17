@@ -22,3 +22,9 @@ Tab:CreateButton("Button Text",function()
 
 end)
 ```
+#### Creating Toggles
+```lua
+Tab:CreateToggle("Toggle Text",function(state)
+
+end)
+```
