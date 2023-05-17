@@ -10,5 +10,9 @@ local Window = Library:CreateWindow("Title")
 ```
 #### Creating Tabs
 ```lua
-local Tab = Window:CreateTab("TabName")
+local Tab = Window:CreateTab("TabText")
+```
+#### Creating Labels
+```lua
+Tab:CreateLabel("LabelText")
 ```
