@@ -9,4 +9,6 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatG
 local Window = Library:CreateWindow("Title")
 ```
 #### Creating Tabs
+```lua
 local Tab = Window:CreateTab("TabName")
+```
