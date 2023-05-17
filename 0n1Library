@@ -182,6 +182,7 @@ function Library:CreateWindow(LibName)
 				v.Visible = false   -- then we make them invisible 
 			end 
 			Tab1_2.Visible = true  -- We make current page visible but not others
+			Tab1_1.TextColor3 = Color3.fromRGB(164, 164, 164)
 		end)
 		
 		
