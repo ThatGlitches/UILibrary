@@ -74,7 +74,7 @@ function Library:CreateWindow(LibName)
 	Tabs_1.AutomaticCanvasSize = Enum.AutomaticSize.Y
 	Tabs_1.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
 	Tabs_1.CanvasPosition = Vector2.new(0, 0)
-	Tabs_1.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+	Tabs_1.ElasticBehavior = Enum.ElasticBehavior.Never
 	Tabs_1.HorizontalScrollBarInset = Enum.ScrollBarInset.None
 	Tabs_1.MidImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
 	Tabs_1.ScrollBarImageTransparency = 0
