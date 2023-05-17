@@ -16,3 +16,9 @@ local Tab = Window:CreateTab("TabText")
 ```lua
 Tab:CreateLabel("LabelText")
 ```
+#### Creating Buttons
+```lua
+Tab:CreateButton("Button Text",function()
+
+end)
+```
