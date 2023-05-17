@@ -19,7 +19,7 @@ function Library:CreateWindow(LibName)
 
 	
 	
-	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.Parent = game.CoreGui
 
 	Main_1.Name = "Main"
 	Main_1.Parent = ScreenGui
@@ -102,7 +102,10 @@ function Library:CreateWindow(LibName)
 	Close_1.Text = "Close"
 	Close_1.TextColor3 = Color3.fromRGB(255,255,255)
 	Close_1.TextSize = 14
-
+	Close_1.MouseButton1Click:Connect(function()
+		game.CoreGui:FindFirstChild("ScreenGui"):Destroy()
+	end)
+	
 	Items_1.Name = "Items"
 	Items_1.Parent = Main_1
 	Items_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
