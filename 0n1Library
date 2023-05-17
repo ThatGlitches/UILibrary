@@ -71,7 +71,7 @@ function Library:CreateWindow(LibName)
 	Tabs_1.Position = UDim2.new(0.0171673819, 0,0.146031752, 0)
 	Tabs_1.Size = UDim2.new(0, 156,0, 229)
 	Tabs_1.ClipsDescendants = true
-	Tabs_1.AutomaticCanvasSize = Enum.AutomaticSize.None
+	Tabs_1.AutomaticCanvasSize = Enum.AutomaticSize.Y
 	Tabs_1.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
 	Tabs_1.CanvasPosition = Vector2.new(0, 0)
 	Tabs_1.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
@@ -87,7 +87,8 @@ function Library:CreateWindow(LibName)
 	UIPadding_3.Parent = Tabs_1
 	UIPadding_3.PaddingLeft = UDim.new(0,6)
 	UIPadding_3.PaddingTop = UDim.new(0,6)
-
+	UIPadding_3.PaddingBottom = UDim.new(0,6)
+	
 	UIListLayout_1.Parent = Tabs_1
 	UIListLayout_1.Padding = UDim.new(0,6)
 	UIListLayout_1.SortOrder = Enum.SortOrder.LayoutOrder
