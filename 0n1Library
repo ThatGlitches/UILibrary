@@ -334,7 +334,7 @@ function Library:CreateWindow(LibName)
 				tog = not tog
 				Callback(tog) -- Callbacks whenever we toggle
 				if tog then 
-					Toggler_1.Text = "✓	"
+					Toggler_1.Text = "✓"
 				else
 					Toggler_1.Text = "X"
 				end
